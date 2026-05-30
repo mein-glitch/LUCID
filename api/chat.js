@@ -7,36 +7,33 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   try {
-    // Extract the prompt from Anthropic-style request body
     const messages = req.body.messages || [];
-    const promptText = messages.map(m =>
-      typeof m.content === 'string' ? m.content : ''
-    ).join('\n');
-
     const maxTokens = req.body.max_tokens || 4000;
 
-    // Call Gemini API
-    const geminiRes = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${process.env.GEMINI_API_KEY}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: promptText }] }],
-          generationConfig: { maxOutputTokens: maxTokens }
-        })
-      }
-    );
+    const openRouterRes = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        'HTTP-Referer': 'https://lucidwrites.vercel.app',
+        'X-Title': 'Lucid'
+      },
+      body: JSON.stringify({
+        model: 'meta-llama/llama-3.3-70b-instruct:free',
+        messages: messages,
+        max_tokens: maxTokens
+      })
+    });
 
-    const geminiData = await geminiRes.json();
+    const data = await openRouterRes.json();
 
-    if (!geminiRes.ok) {
-      const errMsg = geminiData?.error?.message || 'Gemini API error';
-      return res.status(geminiRes.status).json({ error: { message: errMsg } });
+    if (!openRouterRes.ok) {
+      const errMsg = data?.error?.message || 'OpenRouter API error';
+      return res.status(openRouterRes.status).json({ error: { message: errMsg } });
     }
 
-    // Convert Gemini response → Anthropic format so lucid.html needs no changes
-    const text = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    // Convert to Anthropic format so lucid.html needs no changes
+    const text = data?.choices?.[0]?.message?.content || '';
     return res.status(200).json({
       content: [{ type: 'text', text }]
     });
@@ -46,3 +43,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: { message: err.message } });
   }
 }
+
