@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         'X-Title': 'Lucid'
       },
       body: JSON.stringify({
-        model: 'mistralai/mistral-7b-instruct:free',
+        model: 'deepseek/deepseek-chat:free',
         messages: messages,
         max_tokens: maxTokens
       })
