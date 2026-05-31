@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         'X-Title': 'Lucid'
       },
       body: JSON.stringify({
-        model: 'deepseek/deepseek-chat:free',
+        model: 'openrouter/auto',
         messages: messages,
         max_tokens: maxTokens
       })
