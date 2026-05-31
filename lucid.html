@@ -246,6 +246,21 @@ body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--ink
 .tip-text{font-family:'Cormorant Garamond',serif;font-size:1.02rem;line-height:1.7;color:var(--ink3)}
 .tip-text strong{color:var(--red);font-weight:600}
 
+/* TEACHING PANEL */
+.teaching-panel{background:rgba(139,26,26,0.03);border:1px solid rgba(168,132,48,0.35);border-left:3px solid var(--red);margin-top:1.2rem;overflow:hidden}
+.teaching-header{background:rgba(139,26,26,0.06);padding:1rem 1.4rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(168,132,48,0.2);cursor:pointer;user-select:none}
+.teaching-header-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;font-style:italic;color:var(--ink);display:flex;align-items:center;gap:0.6rem}
+.teaching-header-sub{font-family:'IM Fell English',serif;font-size:0.72rem;color:var(--gold2);font-style:italic;letter-spacing:0.06em}
+.teaching-body{padding:1.4rem}
+.teaching-section{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px dashed rgba(140,100,20,0.18)}
+.teaching-section:last-child{border:none;margin-bottom:0;padding-bottom:0}
+.teaching-section-title{font-family:'IM Fell English',serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);font-style:italic;margin-bottom:0.5rem}
+.teaching-lesson{font-family:'Cormorant Garamond',serif;font-size:1.02rem;color:var(--ink3);line-height:1.8;margin-bottom:0.8rem;font-style:italic}
+.teaching-bullets{list-style:none;padding:0;margin:0}
+.teaching-bullets li{font-family:'Cormorant Garamond',serif;font-size:0.96rem;color:var(--ink3);line-height:1.7;padding:0.3rem 0 0.3rem 1.4rem;position:relative}
+.teaching-bullets li::before{content:'✦';position:absolute;left:0;color:var(--red);font-size:0.55rem;top:0.55rem}
+.teaching-bullets li strong{color:var(--ink);font-weight:600}
+
 /* INTERVIEW BANNER */
 .interview-banner{background:linear-gradient(135deg,rgba(139,26,26,0.07),rgba(168,132,48,0.08));border:1px solid rgba(168,132,48,0.3);padding:1.6rem 2rem;margin-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .ib-text h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;font-style:italic;color:var(--ink);margin-bottom:0.25rem}
@@ -265,8 +280,8 @@ body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--ink
 .c-why{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--ink3);margin-top:0.2rem;font-style:italic}
 
 /* ── USAGE COUNTER BADGE ── */
-.usage-badge{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(139,26,26,0.08);border:1px solid rgba(139,26,26,0.25);padding:0.38rem 0.9rem;font-family:'IM Fell English',serif;font-size:0.85rem;color:var(--red);font-style:italic;margin-bottom:1rem}
-.usage-badge span{font-weight:700;font-style:normal}
+.usage-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(139,26,26,0.08);border:1px solid rgba(139,26,26,0.25);padding:0.65rem 1.2rem;font-family:'IM Fell English',serif;font-size:1.05rem;color:var(--red);font-style:italic;margin-bottom:1.2rem;line-height:1.5}
+.usage-badge span{font-weight:700;font-style:normal;font-size:1.1rem}
 
 /* ── EXAMPLE PROMPTS PANEL ── */
 .prompts-overlay{position:fixed;inset:0;background:rgba(20,10,2,0.88);z-index:600;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:2rem 1rem;backdrop-filter:blur(10px)}
@@ -410,7 +425,7 @@ body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--ink
           <button class="btn-p" onclick="goResume()">Start Writing My Story →</button>
           <button class="btn-s" onclick="goDocs()">Help Me Understand This Doc</button>
         </div>
-        <p style="font-family:'IM Fell English',serif;font-size:0.65rem;color:var(--gold);font-style:italic;margin-top:1.2rem;letter-spacing:0.1em">✦ Free: 2 resumes · 3 document simplifications ✦</p>
+        <p style="font-family:'IM Fell English',serif;font-size:1rem;color:var(--gold);font-style:italic;margin-top:1.4rem;letter-spacing:0.08em">✦ Free to use · No sign-up required ✦</p>
       </section>
       <div class="orn-div"><span>✦ &nbsp; ✦ &nbsp; ✦</span></div>
       <section>
@@ -533,7 +548,7 @@ body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--ink
       <div id="resume-usage-display"></div>
 
       <!-- EXAMPLE PROMPTS TRIGGER -->
-      <button onclick="openPromptsPanel()" style="background:rgba(0,0,0,0.02);border:1px dashed var(--cb);padding:0.55rem 1.1rem;font-family:'IM Fell English',serif;font-size:0.72rem;font-style:italic;color:var(--ink3);cursor:pointer;transition:all 0.2s;margin-bottom:2rem;display:inline-flex;align-items:center;gap:0.5rem" onmouseover="this.style.borderColor='var(--gold2)'" onmouseout="this.style.borderColor='var(--cb)'">
+      <button onclick="openPromptsPanel()" style="background:rgba(0,0,0,0.02);border:1px dashed var(--cb);padding:0.75rem 1.4rem;font-family:'IM Fell English',serif;font-size:1rem;font-style:italic;color:var(--ink3);cursor:pointer;transition:all 0.2s;margin-bottom:2rem;display:inline-flex;align-items:center;gap:0.5rem" onmouseover="this.style.borderColor='var(--gold2)'" onmouseout="this.style.borderColor='var(--cb)'">
         ✦ Not sure how to start? See example profiles →
       </button>
 
@@ -629,6 +644,15 @@ body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--ink
           <div class="tips-title">🎓 Coach's Notes — Keep These</div>
           <div id="tips-container"></div>
         </div>
+        <div class="teaching-panel" id="teaching-panel" style="display:none">
+          <div class="teaching-header" onclick="toggleTeaching()">
+            <div class="teaching-header-title">📖 Lucid Teaches You — What & Why</div>
+            <div class="teaching-header-sub" id="teaching-toggle-label">Tap to expand ▾</div>
+          </div>
+          <div class="teaching-body" id="teaching-body" style="display:none">
+            <div id="teaching-container"></div>
+          </div>
+        </div>
         <div class="interview-banner">
           <div class="ib-text">
             <div class="ib-tag">⭐ Interview Coach</div>
@@ -673,13 +697,20 @@ body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--ink
       <p class="hero-feel" style="text-align:left;margin-bottom:1rem">Whatever they buried in jargon — Lucid brings it into the light.</p>
       <div id="doc-usage-display"></div>
 
+      <button onclick="openDocExamples()" style="background:rgba(0,0,0,0.02);border:1px dashed var(--cb);padding:0.75rem 1.4rem;font-family:'IM Fell English',serif;font-size:1rem;font-style:italic;color:var(--ink3);cursor:pointer;transition:all 0.2s;margin-bottom:2rem;display:inline-flex;align-items:center;gap:0.5rem" onmouseover="this.style.borderColor='var(--gold2)'" onmouseout="this.style.borderColor='var(--cb)'">
+        ✦ Not sure what to paste? See example documents →
+      </button>
+
       <div class="form-section" style="margin-top:1rem">
         <div class="form-section-title"><span>I</span> Your Document</div>
         <div class="doc-drop" id="doc-drop">
-          <input type="file" accept=".txt,.pdf,.doc,.docx" onchange="handleDocFile(this)">
+          <input type="file" accept=".txt,.pdf,.doc,.docx,.jpg,.jpeg,.png,.webp" onchange="handleDocFile(this)">
           <span class="doc-drop-icon">📂</span>
-          <div class="doc-drop-text">Drop a file here, or click to browse</div>
-          <div class="doc-drop-sub">TXT · PDF · DOC · DOCX</div>
+          <div class="doc-drop-text">Drop a file or image here, or click to browse</div>
+          <div class="doc-drop-sub">TXT · PDF · DOC · DOCX · JPG · PNG</div>
+        </div>
+        <div id="doc-image-preview" style="display:none;margin-bottom:1rem;text-align:center">
+          <img id="doc-img" src="" style="max-width:100%;max-height:280px;border:1px solid var(--cb);object-fit:contain">
         </div>
         <div class="file-badge" id="file-badge">📎 <span id="file-name"></span></div>
         <div class="form-group">
@@ -727,6 +758,23 @@ Example: 'The lessee hereby acknowledges and agrees that any breach of the afore
 
 </div><!-- end page-container -->
 </div><!-- end app -->
+
+<!-- ═══════════════════ DOC EXAMPLES PANEL ═══════════════════ -->
+<div class="prompts-overlay" id="doc-examples-overlay">
+  <div class="prompts-panel parch">
+    <div class="prompts-header">
+      <div class="prompts-title-group">
+        <span class="prompts-label">✦ See It In Action</span>
+        <div class="prompts-heading">Example Documents — Click to Fill & Decode</div>
+      </div>
+      <button class="prompts-close" onclick="closeDocExamples()">✕ Close</button>
+    </div>
+    <div class="prompts-body">
+      <p class="prompts-intro">Each example below is a real-world document type people struggle to understand. Click any card and watch Lucid decode it for you.</p>
+      <div id="doc-examples-list"></div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══════════════════ EXAMPLE PROMPTS PANEL ═══════════════════ -->
 <div class="prompts-overlay" id="prompts-overlay">
@@ -805,30 +853,24 @@ Example: 'The lessee hereby acknowledges and agrees that any breach of the afore
 
 <script>
 /* ═══════════════════════════════════════════════════
-   USAGE TRACKING — localStorage
-   Free: 2 resumes, 3 docs
+   USAGE TRACKING — localStorage (no hard limits, paywall UI only)
 ═══════════════════════════════════════════════════ */
-var LIMITS={resume:2,doc:3};
+var LIMITS={resume:999,doc:999};
 function getUsage(){
   try{return JSON.parse(localStorage.getItem('lucid_usage')||'{"resume":0,"doc":0}')}
   catch(e){return{resume:0,doc:0}}
 }
 function saveUsage(u){localStorage.setItem('lucid_usage',JSON.stringify(u))}
-function canUse(type){
-  var u=getUsage();
-  return u[type]<LIMITS[type];
-}
+function canUse(type){return true;}
 function incrementUsage(type){
   var u=getUsage();u[type]++;saveUsage(u);updateUsageDisplays();
 }
 function updateUsageDisplays(){
   var u=getUsage();
-  var rLeft=Math.max(0,LIMITS.resume-u.resume);
-  var dLeft=Math.max(0,LIMITS.doc-u.doc);
   var rEl=document.getElementById('resume-usage-display');
   var dEl=document.getElementById('doc-usage-display');
-  if(rEl)rEl.innerHTML='<div class="usage-badge">✦ <span>'+rLeft+' of '+LIMITS.resume+'</span> free resumes remaining · <span style="cursor:pointer;text-decoration:underline" onclick="showPaywall(\'resume\')">Upgrade for more</span></div>';
-  if(dEl)dEl.innerHTML='<div class="usage-badge">✦ <span>'+dLeft+' of '+LIMITS.doc+'</span> free simplifications remaining · <span style="cursor:pointer;text-decoration:underline" onclick="showPaywall(\'doc\')">Upgrade for more</span></div>';
+  if(rEl)rEl.innerHTML='<div class="usage-badge">✦ <span>'+u.resume+'</span> resume'+(u.resume!==1?'s':'')+' created · <span style="cursor:pointer;text-decoration:underline" onclick="showPaywall(\'resume\')">Upgrade for priority AI</span></div>';
+  if(dEl)dEl.innerHTML='<div class="usage-badge">✦ <span>'+u.doc+'</span> document'+(u.doc!==1?'s':'')+' decoded · <span style="cursor:pointer;text-decoration:underline" onclick="showPaywall(\'doc\')">Upgrade for priority AI</span></div>';
 }
 
 /* ── PAYWALL ── */
@@ -1174,21 +1216,188 @@ function handlePhoto(input){
     r.readAsDataURL(input.files[0]);
   }
 }
+var docImageBase64='';
+var docImageType='';
 function handleDocFile(input){
   if(input.files&&input.files[0]){
     var f=input.files[0];
     document.getElementById('file-name').textContent=f.name;
     document.getElementById('file-badge').classList.add('show');
-    if(f.type==='text/plain'){
+    var imgTypes=['image/jpeg','image/jpg','image/png','image/webp'];
+    if(imgTypes.indexOf(f.type)>-1){
+      // Image file
       var r=new FileReader();
-      r.onload=function(e){document.getElementById('doc-text').value=e.target.result};
-      r.readAsText(f);
+      r.onload=function(e){
+        docImageBase64=e.target.result.split(',')[1];
+        docImageType=f.type;
+        document.getElementById('doc-img').src=e.target.result;
+        document.getElementById('doc-image-preview').style.display='block';
+        document.getElementById('doc-text').value='';
+        document.getElementById('doc-text').placeholder='Image uploaded — Lucid will read and decode it for you. Or add extra context here if needed.';
+      };
+      r.readAsDataURL(f);
+    } else {
+      // Text file
+      docImageBase64='';docImageType='';
+      document.getElementById('doc-image-preview').style.display='none';
+      if(f.type==='text/plain'){
+        var r=new FileReader();
+        r.onload=function(e){document.getElementById('doc-text').value=e.target.result};
+        r.readAsText(f);
+      }
     }
   }
 }
 
 /* ═══════════════════════════════
-   EXAMPLE PROMPTS
+   DOC EXAMPLES
+═══════════════════════════════ */
+var docExamples=[
+  {
+    type:'Rental / Lease Agreement',
+    label:'Legal',
+    preview:'Understanding what you\'re actually signing before moving in...',
+    text:`RESIDENTIAL LEASE AGREEMENT
+
+This Lease Agreement ("Agreement") is entered into as of the 1st day of June, 2025, by and between Greenfield Properties LLC ("Landlord") and the undersigned tenant(s) ("Tenant").
+
+1. PREMISES. Landlord hereby leases to Tenant the property located at 42 Elmwood Drive, Apt 3B, Springfield, for residential purposes only.
+
+2. TERM. The tenancy shall commence on June 1, 2025 and shall terminate on May 31, 2026 ("Lease Term"). Upon expiration, this Agreement shall convert to a month-to-month tenancy unless either party provides thirty (30) days written notice of termination.
+
+3. RENT. Tenant agrees to pay the sum of $1,200 per month, due on the 1st day of each calendar month. Rent received after the 5th day of the month shall be subject to a late fee of $75. Returned checks shall incur an additional fee of $35.
+
+4. SECURITY DEPOSIT. Tenant shall deposit $2,400 as a security deposit, to be held in a non-interest-bearing account. The deposit shall be returned within 21 days of vacating, less any deductions for damages beyond normal wear and tear, unpaid rent, or cleaning fees.
+
+5. UTILITIES. Tenant shall be solely responsible for payment of all utilities including electricity, gas, internet, and cable. Water and trash removal are included in rent.
+
+6. MAINTENANCE. Tenant shall maintain the premises in a clean and sanitary condition. Tenant shall promptly notify Landlord of any needed repairs. Tenant shall not make alterations without prior written consent.
+
+7. SUBLETTING. Tenant may not sublet or assign this Agreement without prior written consent of Landlord, which may be withheld at Landlord's sole discretion.
+
+8. TERMINATION. Either party may terminate this Agreement with 30 days written notice. Early termination by Tenant shall result in forfeiture of the security deposit and liability for remaining rent through the end of the lease term.`
+  },
+  {
+    type:'Employment Offer Letter',
+    label:'HR / Work',
+    preview:'What your job offer actually means — the fine print decoded...',
+    text:`LETTER OF EMPLOYMENT OFFER
+
+Dear Ms. Nguyen,
+
+We are pleased to extend this conditional offer of employment for the position of Marketing Coordinator at Meridian Digital Solutions Inc., subject to the terms and conditions set forth herein.
+
+COMPENSATION: Your base salary shall be $52,000 per annum, payable bi-weekly. You will be eligible to participate in the Company's annual performance bonus program, with a target bonus of up to 10% of your base salary, contingent upon individual and company performance metrics as determined at the sole discretion of management.
+
+BENEFITS: You will be eligible for health, dental, and vision insurance following a 90-day probationary period. The Company contributes 70% of the premium for employee-only coverage. Dependent coverage is available at Tenant's expense.
+
+EMPLOYMENT AT WILL: Your employment with Meridian Digital Solutions is at-will, meaning either party may terminate the employment relationship at any time, with or without cause or notice.
+
+INTELLECTUAL PROPERTY: Any work product, inventions, or creative works produced in the course of your employment, or using company resources, shall be the exclusive property of Meridian Digital Solutions Inc.
+
+NON-COMPETE: For a period of 12 months following termination of employment, you agree not to engage in any business activities competitive with Meridian Digital Solutions within a 50-mile radius.
+
+CONFIDENTIALITY: You agree to hold in strict confidence all proprietary information, trade secrets, and business strategies of the Company, both during and after employment.
+
+This offer is contingent upon successful completion of a background check and reference verification. Please sign and return this letter within 5 business days to confirm your acceptance.`
+  },
+  {
+    type:'Medical Report / Discharge Summary',
+    label:'Medical',
+    preview:'Making sense of hospital paperwork and medical terminology...',
+    text:`PATIENT DISCHARGE SUMMARY
+
+Patient: John Doe | DOB: 14/03/1978 | MRN: 7823041
+Admission Date: 22 May 2025 | Discharge Date: 25 May 2025
+Attending Physician: Dr. R. Mehta, MD, FACC
+
+PRESENTING COMPLAINT: Patient presented to the emergency department with acute onset chest pain radiating to the left arm, diaphoresis, and dyspnea of approximately 2 hours duration.
+
+DIAGNOSIS: ST-elevation myocardial infarction (STEMI), anterior wall. Hypertension (pre-existing). Hyperlipidaemia (newly diagnosed).
+
+INVESTIGATIONS: ECG demonstrated ST elevation in leads V1–V4 consistent with anterior STEMI. Troponin I peaked at 18.4 ng/mL. Echocardiogram revealed reduced ejection fraction of 45% with anterior wall hypokinesia. Lipid panel showed LDL 4.2 mmol/L.
+
+TREATMENT: Emergency percutaneous coronary intervention (PCI) performed with drug-eluting stent placement in the left anterior descending artery (LAD). Patient received dual antiplatelet therapy (aspirin 325mg + ticagrelor 180mg loading dose), heparin anticoagulation, and statin therapy.
+
+DISCHARGE MEDICATIONS:
+- Aspirin 75mg once daily (lifelong)
+- Ticagrelor 90mg twice daily (12 months)
+- Atorvastatin 80mg once nightly
+- Ramipril 5mg once daily (titrate as tolerated)
+- Bisoprolol 2.5mg once daily
+
+FOLLOW-UP: Cardiology outpatient review in 6 weeks. Cardiac rehabilitation programme referral made. Patient advised to avoid strenuous activity for 4 weeks and to abstain from driving for 4 weeks per DVLA guidelines.`
+  },
+  {
+    type:'Bank / Loan Terms',
+    label:'Finance',
+    preview:'The real cost of that loan — what the numbers actually mean...',
+    text:`PERSONAL LOAN AGREEMENT — TERMS AND CONDITIONS
+
+Lender: First National Credit Corp | Borrower: Sarah Mitchell
+Loan Amount: $15,000 | Loan Reference: PL-2025-88231
+
+INTEREST RATE & APR: The nominal interest rate on this loan is 14.9% per annum. The Annual Percentage Rate (APR), which includes all mandatory fees and charges, is 16.8%. Interest accrues daily on the outstanding principal balance.
+
+REPAYMENT: The loan shall be repaid in 48 equal monthly instalments of $413.50, commencing 30 days from disbursement. Total repayment amount over the loan term: $19,848.00.
+
+ORIGINATION FEE: A non-refundable origination fee of $300 has been deducted from the disbursed amount. The net amount credited to your account is therefore $14,700.
+
+LATE PAYMENT: Payments received more than 5 days past the due date will incur a late charge of 5% of the missed instalment or $25, whichever is greater. Consecutive missed payments may result in the loan being referred to collections and reported to credit bureaus.
+
+PREPAYMENT: You may prepay the outstanding balance at any time without penalty. Partial prepayments will reduce future instalments proportionally.
+
+DEFAULT: In the event of default (3 or more consecutive missed payments), the full remaining balance becomes immediately due and payable. Lender reserves the right to pursue all available legal remedies including wage garnishment and asset seizure.
+
+CREDIT REPORTING: This loan will be reported to Equifax, Experian, and TransUnion. Timely payments will positively affect your credit score. Missed payments will negatively impact your score for up to 7 years.`
+  },
+  {
+    type:'Privacy Policy / Terms of Service',
+    label:'Tech / App',
+    preview:'What that app is actually doing with your data...',
+    text:`PRIVACY POLICY & TERMS OF SERVICE — SnapShare Inc.
+
+Last Updated: January 1, 2025
+
+DATA COLLECTION: By using SnapShare, you consent to the collection of the following data: your name, email address, phone number, device identifiers, IP address, location data (if enabled), browsing behaviour within the app, contacts (if you grant access), photos and media accessed, and usage analytics.
+
+DATA SHARING: We may share your personal data with: (a) third-party advertising partners for targeted advertising purposes; (b) analytics providers including Google Analytics and Mixpanel; (c) law enforcement agencies upon receipt of a valid legal request; (d) acquirers in the event of a merger, acquisition, or sale of assets.
+
+TARGETED ADVERTISING: We use your data to build an advertising profile. You may opt out of personalised advertising in settings, however you will continue to receive non-personalised ads.
+
+USER CONTENT: Any content you upload, post, or share on SnapShare grants us a non-exclusive, worldwide, royalty-free, sublicensable, and transferable licence to use, reproduce, modify, adapt, publish, translate, distribute, and display such content in any media.
+
+DATA RETENTION: We retain your personal data for as long as your account is active and for up to 5 years thereafter. Deleted content may remain in backup systems for up to 90 days.
+
+COOKIES: We use essential, functional, and marketing cookies. By continuing to use the platform, you accept our use of cookies. Granular cookie preferences are available in account settings.
+
+CHANGES: We reserve the right to update this policy at any time. Continued use of the app following notification of changes constitutes acceptance.`
+  }
+];
+
+function openDocExamples(){
+  var list=document.getElementById('doc-examples-list');
+  list.innerHTML='';
+  docExamples.forEach(function(d){
+    var card=document.createElement('div');card.className='prompt-card';
+    card.innerHTML='<div class="prompt-card-role">'+d.label+'</div><div class="prompt-card-name">'+d.type+'</div><div class="prompt-card-preview">'+d.preview+'</div><span class="prompt-card-arrow">→</span>';
+    card.onclick=function(){fillDocFromExample(d)};
+    list.appendChild(card);
+  });
+  document.getElementById('doc-examples-overlay').classList.add('show');
+}
+function closeDocExamples(){document.getElementById('doc-examples-overlay').classList.remove('show')}
+function fillDocFromExample(d){
+  closeDocExamples();
+  document.getElementById('doc-text').value=d.text;
+  document.getElementById('doc-image-preview').style.display='none';
+  docImageBase64='';docImageType='';
+  document.getElementById('doc-text').placeholder='Paste any legal, medical, financial, employment, or other complex document here...';
+  window.scrollTo({top:300,behavior:'smooth'});
+}
+
+/* ═══════════════════════════════
+   EXAMPLE PROMPTS (Resume)
 ═══════════════════════════════ */
 var exampleProfiles=[
   {
@@ -1283,437 +1492,4 @@ function fillFromPrompt(p){
     document.querySelectorAll('.job-chip').forEach(function(c){
       if(c.textContent.trim()===p.role){c.click()}
     });
-    if(!selectedJob){document.getElementById('r-custom-job').value=p.role}
-    document.getElementById('r-name').value=p.name;
-    document.getElementById('r-email').value=p.email;
-    document.getElementById('r-phone').value=p.phone;
-    document.getElementById('r-location').value=p.location;
-    document.getElementById('r-linkedin').value=p.linkedin||'';
-    document.getElementById('r-exp').value=p.exp;
-    document.getElementById('r-edu').value=p.edu;
-    document.getElementById('r-skills').value=p.skills;
-    document.getElementById('r-langs').value=p.langs;
-    document.getElementById('r-awards').value=p.awards||'';
-    // Scroll to form
-    window.scrollTo({top:300,behavior:'smooth'});
-  });
-}
-
-/* ═══════════════════════════════
-   TEMPLATE STYLES — rendering logic
-═══════════════════════════════ */
-function getTemplateStyles(tpl){
-  var styles={
-    classic:{
-      wrapper:'background:#FFFEF8;color:#18100A;padding:2.5rem;font-family:Georgia,serif',
-      name:'font-family:"Playfair Display",serif;font-size:1.75rem;font-weight:700;color:#14100A;margin-bottom:0.15rem;letter-spacing:-0.01em',
-      contact:'font-size:0.78rem;color:#5A4030;margin-bottom:1.2rem;display:flex;flex-wrap:wrap;gap:1.2rem',
-      secTitle:'font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#8A6030;border-bottom:1.5px solid #E0D0B0;padding-bottom:0.2rem;margin-bottom:0.65rem;margin-top:1.2rem',
-      jobTitle:'font-weight:700;font-size:0.9rem;color:#18100A',
-      jobMeta:'font-size:0.75rem;color:#6A4828;margin-bottom:0.2rem',
-      bullet:'font-size:0.84rem;margin-bottom:0.15rem',
-      summary:'font-size:0.84rem;line-height:1.7;font-style:italic',
-      skillTag:'background:#F5EDE0;padding:0.18rem 0.6rem;font-size:0.74rem;border-radius:1px;color:#4A3018;display:inline-block;margin:2px',
-      label:''
-    },
-    vintage:{
-      wrapper:'background:linear-gradient(135deg,#F5ECD5,#EDD8B0);color:#2C1810;padding:2.5rem;font-family:Georgia,serif;border:2px solid #B89040;',
-      name:'font-family:"Playfair Display",serif;font-size:1.8rem;font-weight:700;color:#2C1810;margin-bottom:0.15rem;letter-spacing:0.02em;text-shadow:1px 1px 0 rgba(180,120,40,0.2)',
-      contact:'font-size:0.76rem;color:#6A3C20;margin-bottom:1.2rem;display:flex;flex-wrap:wrap;gap:1.2rem',
-      secTitle:'font-size:0.64rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#8A5020;border-bottom:1px solid rgba(180,120,40,0.4);padding-bottom:0.2rem;margin-bottom:0.65rem;margin-top:1.2rem',
-      jobTitle:'font-weight:700;font-size:0.9rem;color:#2C1810',
-      jobMeta:'font-size:0.75rem;color:#7A4820;margin-bottom:0.2rem;font-style:italic',
-      bullet:'font-size:0.83rem;margin-bottom:0.15rem',
-      summary:'font-size:0.84rem;line-height:1.7;font-style:italic;color:#3C2010',
-      skillTag:'background:rgba(180,120,40,0.15);border:1px solid rgba(140,80,20,0.3);padding:0.18rem 0.55rem;font-size:0.73rem;border-radius:1px;color:#5A3010;display:inline-block;margin:2px',
-      label:'✦ '
-    },
-    vibrant:{
-      wrapper:'background:#F8FAFF;color:#1A2038;padding:0;font-family:Georgia,serif;overflow:hidden',
-      name:'font-family:"Playfair Display",serif;font-size:1.8rem;font-weight:900;color:#FFFFFF;margin-bottom:0.15rem;letter-spacing:-0.01em',
-      contact:'font-size:0.76rem;color:rgba(255,255,255,0.82);margin-bottom:0;display:flex;flex-wrap:wrap;gap:1.2rem',
-      secTitle:'font-size:0.64rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#2E5AB0;border-left:3px solid #3A7FD5;padding-left:0.6rem;margin-bottom:0.65rem;margin-top:1.2rem',
-      jobTitle:'font-weight:700;font-size:0.9rem;color:#1A2038',
-      jobMeta:'font-size:0.75rem;color:#4A6898;margin-bottom:0.2rem',
-      bullet:'font-size:0.83rem;margin-bottom:0.15rem;color:#283050',
-      summary:'font-size:0.84rem;line-height:1.7;color:rgba(255,255,255,0.9)',
-      skillTag:'background:#EBF2FF;border:1px solid #B0C8F0;padding:0.18rem 0.6rem;font-size:0.73rem;border-radius:12px;color:#2040A0;display:inline-block;margin:2px',
-      label:'→ ',
-      header:'background:linear-gradient(135deg,#1A2744,#2E4A8E,#3A68C0);padding:1.8rem 2.5rem 1.5rem;margin-bottom:1.5rem',
-      body:'padding:0 2.5rem 2.5rem'
-    },
-    abstract:{
-      wrapper:'background:#0E0E18;color:#E8E4DC;padding:0;font-family:Georgia,serif;overflow:hidden',
-      name:'font-family:"Playfair Display",serif;font-size:1.9rem;font-weight:700;color:#FFFFFF;margin-bottom:0.15rem;letter-spacing:0.02em',
-      contact:'font-size:0.75rem;color:rgba(220,200,160,0.7);margin-bottom:0;display:flex;flex-wrap:wrap;gap:1.2rem',
-      secTitle:'font-size:0.62rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#E09040;border-bottom:1px solid rgba(224,144,64,0.3);padding-bottom:0.2rem;margin-bottom:0.65rem;margin-top:1.2rem',
-      jobTitle:'font-weight:700;font-size:0.9rem;color:#F0EAD8',
-      jobMeta:'font-size:0.75rem;color:#A0906A;margin-bottom:0.2rem;font-style:italic',
-      bullet:'font-size:0.83rem;margin-bottom:0.15rem;color:#C8C0A8',
-      summary:'font-size:0.84rem;line-height:1.7;color:rgba(230,220,190,0.88)',
-      skillTag:'background:rgba(224,144,64,0.12);border:1px solid rgba(224,144,64,0.35);padding:0.18rem 0.6rem;font-size:0.73rem;border-radius:1px;color:#E09040;display:inline-block;margin:2px',
-      label:'◆ ',
-      header:'background:linear-gradient(135deg,#0E0E18,#1A1428,#0E1A28);border-bottom:1px solid rgba(224,144,64,0.3);padding:1.8rem 2.5rem 1.5rem;margin-bottom:1.5rem',
-      body:'padding:0 2.5rem 2.5rem'
-    },
-    executive:{
-      wrapper:'background:#F8F6F0;color:#0C0C0C;padding:0;font-family:Georgia,serif;overflow:hidden',
-      name:'font-family:"Playfair Display",serif;font-size:1.85rem;font-weight:900;color:#F8F6F0;margin-bottom:0.15rem;letter-spacing:0.04em;text-transform:uppercase',
-      contact:'font-size:0.74rem;color:rgba(248,246,240,0.78);margin-bottom:0;display:flex;flex-wrap:wrap;gap:1.2rem',
-      secTitle:'font-size:0.63rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#0C0C0C;border-bottom:2px solid #C8A858;padding-bottom:0.2rem;margin-bottom:0.65rem;margin-top:1.3rem',
-      jobTitle:'font-weight:700;font-size:0.92rem;color:#0C0C0C;text-transform:uppercase;letter-spacing:0.04em',
-      jobMeta:'font-size:0.74rem;color:#4A4030;margin-bottom:0.2rem',
-      bullet:'font-size:0.83rem;margin-bottom:0.15rem;color:#1C1C1C',
-      summary:'font-size:0.84rem;line-height:1.7;color:rgba(248,246,240,0.9)',
-      skillTag:'background:#1A1A1A;padding:0.2rem 0.65rem;font-size:0.72rem;border-radius:0;color:#C8A858;display:inline-block;margin:2px;letter-spacing:0.06em',
-      label:'',
-      header:'background:linear-gradient(180deg,#0A0A0A,#181818);border-bottom:3px solid #C8A858;padding:2rem 2.5rem 1.6rem;margin-bottom:0',
-      divider:'border-top:1px solid rgba(200,168,88,0.4)',
-      body:'padding:0.5rem 2.5rem 2.5rem'
-    }
-  };
-  return styles[tpl]||styles.classic;
-}
-
-function renderResumeWithTemplate(tpl,data,name,email,phone,location,linkedin,photoSrc){
-  var s=getTemplateStyles(tpl);
-  var r=data.resume;
-  var expHTML=(r.experience||[]).map(function(e){
-    return '<div style="margin-bottom:1rem"><div style="'+s.jobTitle+'">'+e.title+'</div><div style="'+s.jobMeta+'">'+e.company+' · '+e.period+'</div><ul style="padding-left:1.2rem">'+e.bullets.map(function(b){return'<li style="'+s.bullet+'">'+b+'</li>'}).join('')+'</ul></div>';
-  }).join('');
-  var eduHTML=(r.education||[]).map(function(e){
-    return '<div style="font-size:0.84rem;margin-bottom:0.3rem"><strong>'+e.degree+'</strong> — '+e.institution+', '+e.year+'</div>';
-  }).join('');
-  var skillsHTML=(r.skills||[]).map(function(sk){return'<span style="'+s.skillTag+'">'+sk+'</span>'}).join('');
-  var langsText=(r.languages&&r.languages.length)?r.languages.join(' · '):'';
-  var photoHTML='';
-  if(photoSrc&&photoSrc!==window.location.href){
-    photoHTML='<img src="'+photoSrc+'" style="width:65px;height:65px;border-radius:50%;object-fit:cover;float:right;margin-left:1.2rem;border:2px solid rgba(255,255,255,0.3)">';
-  }
-  var contactParts=[];
-  if(email)contactParts.push('✉ '+email);
-  if(phone)contactParts.push('📞 '+phone);
-  if(location)contactParts.push('📍 '+location);
-  if(linkedin)contactParts.push('🔗 '+linkedin);
-  var contactHTML=contactParts.map(function(c){return'<span>'+c+'</span>'}).join('');
-
-  if(s.header){
-    // Templates with header strip
-    return '<div style="'+s.wrapper+'">'+
-      '<div style="'+s.header+'">'+photoHTML+
-        '<div style="'+s.name+'">'+name+'</div>'+
-        '<div style="'+s.contact+'">'+contactHTML+'</div>'+
-        '<div style="margin-top:0.9rem;'+s.summary+'">'+r.summary+'</div>'+
-      '</div>'+
-      '<div style="'+(s.body||'padding:1.5rem 2.5rem 2.5rem')+'">'+
-        '<div style="'+s.secTitle+'">Experience</div>'+expHTML+
-        '<div style="'+s.secTitle+'">Education</div>'+eduHTML+
-        '<div style="'+s.secTitle+'">Skills</div><div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.8rem">'+skillsHTML+'</div>'+
-        (langsText?'<div style="'+s.secTitle+'">Languages</div><div style="font-size:0.84rem">'+langsText+'</div>':'')+
-      '</div></div>';
-  } else {
-    // Classic & Vintage — full-page layout
-    return '<div style="'+s.wrapper+'">'+
-      photoHTML+
-      '<div style="'+s.name+'">'+name+'</div>'+
-      '<div style="'+s.contact+'">'+contactHTML+'</div>'+
-      '<div style="'+s.secTitle+'">Professional Summary</div>'+
-      '<div style="'+s.summary+'">'+r.summary+'</div>'+
-      '<div style="'+s.secTitle+'">Experience</div>'+expHTML+
-      '<div style="'+s.secTitle+'">Education</div>'+eduHTML+
-      '<div style="'+s.secTitle+'">Skills</div><div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.8rem">'+skillsHTML+'</div>'+
-      (langsText?'<div style="'+s.secTitle+'">Languages</div><div style="font-size:0.84rem">'+langsText+'</div>':'')+
-    '</div>';
-  }
-}
-
-/* ═══════════════════════════════
-   RESUME BUILDER — FULL AI PROMPT
-═══════════════════════════════ */
-var interviewData={};
-async function buildResume(){
-  if(!canUse('resume')){showPaywall('resume');return;}
-  var name=document.getElementById('r-name').value.trim();
-  var email=document.getElementById('r-email').value.trim();
-  var phone=document.getElementById('r-phone').value.trim();
-  var location=document.getElementById('r-location').value.trim();
-  var linkedin=document.getElementById('r-linkedin').value.trim();
-  var exp=document.getElementById('r-exp').value.trim();
-  var edu=document.getElementById('r-edu').value.trim();
-  var skills=document.getElementById('r-skills').value.trim();
-  var langs=document.getElementById('r-langs').value.trim();
-  var awards=document.getElementById('r-awards').value.trim();
-  var customJob=document.getElementById('r-custom-job').value.trim();
-  var job=customJob||selectedJob;
-  if(!name||!job||!exp){alert('Please fill in your name, choose a role, and add some experience.');return;}
-
-  var btn=document.getElementById('resume-btn');
-  btn.disabled=true;btn.textContent='⏳ Crafting your story...';
-  var lb=document.getElementById('r-loading');lb.classList.add('show');
-  lb.querySelector('.loading-progress').style.animation='none';
-  lb.querySelector('.loading-progress').offsetHeight; // reflow
-  lb.querySelector('.loading-progress').style.animation='loadAnim 10s ease forwards';
-  document.getElementById('resume-output').classList.remove('show');
-  document.getElementById('steps-container').innerHTML='';
-  document.querySelector('.thinking-title').innerHTML='<span class="pulse"></span> Your AI Coach is at work...';
-
-  var tplName={classic:'Classic',vintage:'Vintage',vibrant:'Vibrant',abstract:'Abstract',executive:'Executive'}[selectedTemplate]||'Classic';
-  document.getElementById('resume-tpl-label').textContent='Your Resume · '+tplName;
-
-  var prompt=`You are an elite resume writer and career coach with 20+ years of experience placing candidates at top companies globally. You write resumes that hiring managers stop and read. You understand Applicant Tracking Systems (ATS), keyword optimization, impact storytelling, and what truly makes a candidate memorable.
-
-CANDIDATE INFORMATION:
-- Full Name: ${name}
-- Email: ${email||'not provided'}
-- Phone: ${phone||'not provided'}
-- Location: ${location||'not provided'}
-- LinkedIn/Portfolio: ${linkedin||'not provided'}
-- Target Role: ${job}
-- Experience: ${exp}
-- Education: ${edu||'not provided'}
-- Skills: ${skills||'not provided'}
-- Languages: ${langs||'not provided'}
-- Achievements/Awards: ${awards||'not provided'}
-- Resume Template Style: ${tplName}
-
-YOUR TASK:
-1. Craft a world-class resume tailored precisely for "${job}"
-2. Extract implicit achievements from vague descriptions (e.g. "handled accounts" → quantify, strengthen)
-3. Use powerful action verbs: spearheaded, engineered, orchestrated, drove, pioneered, transformed
-4. Every bullet must follow the CAR formula: Challenge → Action → Result (with numbers wherever inferable)
-5. ATS-optimize with relevant keywords for "${job}"
-6. The summary must be a hook — 2-3 sentences that make a hiring manager lean forward
-7. Coaching tips must be genuinely expert-level, specific to this person's situation
-8. Interview questions must be exactly what this role and this candidate's background would face
-
-RESPOND ONLY in this exact JSON (no markdown, no backticks, no preamble):
-{
-  "steps": [
-    {"icon":"🔍","action":"Analyzing your experience for ${job} alignment","tip":"Your strongest achievement first — it sets the hiring manager's mental frame."},
-    {"icon":"📊","action":"Extracting and quantifying your impact metrics","tip":"Numbers transform descriptions into proof. Even estimates are better than vague claims."},
-    {"icon":"✍️","action":"Writing ATS-optimized bullet points with CAR formula","tip":"Challenge → Action → Result: the formula that makes bullets unforgettable."},
-    {"icon":"🎯","action":"Crafting your professional summary as a hiring hook","tip":"Your summary is your first impression. It must earn the next 30 seconds of reading."},
-    {"icon":"🔑","action":"Optimizing keywords for ${job} applicant tracking systems","tip":"70% of resumes are rejected by ATS before a human sees them. Keywords are critical."},
-    {"icon":"⭐","action":"Shaping your skills section for maximum relevance","tip":"List skills in order of relevance to ${job}, not alphabetically."},
-    {"icon":"🎨","action":"Applying ${tplName} template styling and final polish","tip":"Visual presentation signals professionalism before a word is read."}
-  ],
-  "resume": {
-    "summary": "Write a powerful 2-3 sentence hook tailored to ${job}. Should mention years of experience, core strength, and one compelling proof point. No generic phrases like 'results-driven professional'.",
-    "experience": [
-      {
-        "title": "Exact Job Title",
-        "company": "Company Name",
-        "period": "Month Year – Month Year",
-        "bullets": [
-          "Strong CAR-formula bullet with quantified result",
-          "Another strong bullet with specific achievement",
-          "Third bullet — action verb + context + measurable impact"
-        ]
-      }
-    ],
-    "education": [
-      {"degree": "Full Degree Name", "institution": "Institution Name", "year": "Year"}
-    ],
-    "skills": ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skill 8"],
-    "languages": ["Language (proficiency level)"]
-  },
-  "tips": [
-    {"emoji": "🎯", "title": "Your strongest angle for ${job}", "body": "Specific insight about this candidate's competitive advantage for this exact role."},
-    {"emoji": "📧", "title": "What to write in your cover letter opening", "body": "The first sentence that will make a hiring manager for ${job} read the whole letter."},
-    {"emoji": "🔗", "title": "LinkedIn optimization", "body": "Specific advice for this person's LinkedIn based on their background."},
-    {"emoji": "📈", "title": "The gap to address", "body": "Honest assessment of what might hold this candidate back and exactly how to address it."},
-    {"emoji": "🗣️", "title": "How to talk about your biggest achievement", "body": "Coach on how to verbally present their most impressive accomplishment in interviews."}
-  ],
-  "interviewQuestions": [
-    {"q": "Tell me about yourself.", "hint": "Specific 3-part structure for this candidate: 15 seconds background → 30 seconds relevant experience → 15 seconds why this role. Include what to mention."},
-    {"q": "Specific behavioral question for ${job}", "hint": "Suggest exactly which experience from their background to use and how to structure the STAR answer."},
-    {"q": "Technical or role-specific question for ${job}", "hint": "What knowledge to demonstrate and what to say even if uncertain."},
-    {"q": "What is your greatest weakness?", "hint": "The formula that turns this into a strength signal. Specific to their background."},
-    {"q": "Why do you want to work here?", "hint": "Framework for researching and answering this question in a way that shows genuine interest."}
-  ]
-}`;
-
-  try{
-    var res=await fetch('/api/chat',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:4500,messages:[{role:'user',content:prompt}]})
-    });
-    var data=await res.json();
-    if(!data.content){
-      var apiErr=(data.error&&data.error.message)?data.error.message:JSON.stringify(data);
-      throw new Error('API error: '+apiErr);
-    }
-    var text=data.content.map(function(i){return i.text||''}).join('');
-    var clean=text.replace(/```json[\s\S]*?```|```[\s\S]*?```/g,'').trim();
-    // Try to extract JSON if there's extra text
-    var jsonMatch=clean.match(/\{[\s\S]*\}/);
-    if(jsonMatch)clean=jsonMatch[0];
-    var p=JSON.parse(clean);
-
-    document.getElementById('resume-output').classList.add('show');
-    var sc=document.getElementById('steps-container');
-    for(var i=0;i<p.steps.length;i++){
-      await new Promise(function(r){setTimeout(r,380)});
-      var d=document.createElement('div');d.className='step-line';
-      d.innerHTML='<span class="step-icon">'+p.steps[i].icon+'</span><span>'+p.steps[i].action+'<span class="step-tip"> — '+p.steps[i].tip+'</span></span>';
-      sc.appendChild(d);sc.scrollTop=sc.scrollHeight;
-    }
-    document.querySelector('.thinking-title').innerHTML='✅ Your resume is ready.';
-
-    var photoEl=document.getElementById('photo-preview');
-    var photoSrc=(photoEl&&photoEl.src&&photoEl.style.display!=='none')?photoEl.src:'';
-
-    document.getElementById('resume-body').innerHTML=renderResumeWithTemplate(selectedTemplate,p,name,email,phone,location,linkedin,photoSrc);
-
-    var tc=document.getElementById('tips-container');tc.innerHTML='';
-    (p.tips||[]).forEach(function(t){
-      var d=document.createElement('div');d.className='tip-item';
-      d.innerHTML='<span class="tip-emoji">'+t.emoji+'</span><div class="tip-text"><strong>'+t.title+'</strong><br>'+t.body+'</div>';
-      tc.appendChild(d);
-    });
-
-    interviewData={job:job,questions:p.interviewQuestions||[]};
-    incrementUsage('resume');
-
-    // Scroll to output
-    setTimeout(function(){document.getElementById('resume-output').scrollIntoView({behavior:'smooth',block:'start'})},200);
-  }catch(err){
-    console.error(err);
-    document.getElementById('resume-output').classList.add('show');
-    document.getElementById('resume-body').innerHTML='<div style="padding:1.5rem"><p style="color:#8B1A1A;font-family:Georgia,serif;font-size:0.9rem;margin-bottom:0.8rem">⚠ Error: '+err.message+'</p><p style="font-family:Georgia,serif;font-size:0.82rem;color:#5A3E1C;line-height:1.7">Check Vercel environment variables and redeploy.</p></div>';
-  }
-  lb.classList.remove('show');
-  btn.disabled=false;btn.textContent='⚡ Build My Resume & Coach Me →';
-}
-
-function copyResume(){
-  var el=document.getElementById('resume-body');
-  var range=document.createRange();range.selectNode(el);
-  window.getSelection().removeAllRanges();window.getSelection().addRange(range);
-  document.execCommand('copy');window.getSelection().removeAllRanges();
-  var b=document.querySelector('.copy-btn');b.textContent='Copied ✓';
-  setTimeout(function(){b.textContent='Copy Text'},2200);
-}
-
-/* ═══════════════════════════════
-   DOC SIMPLIFIER — FULL AI PROMPT
-═══════════════════════════════ */
-async function simplifyDoc(){
-  if(!canUse('doc')){showPaywall('doc');return;}
-  var text=document.getElementById('doc-text').value.trim();
-  if(!text){alert('Please paste or upload a document first.');return;}
-  var styleEl=document.querySelector('.style-chip.selected');
-  var style=styleEl?styleEl.dataset.style:'friendly';
-  var btn=document.getElementById('doc-btn');
-  btn.disabled=true;btn.textContent='⏳ Decoding...';
-  var lb=document.getElementById('d-loading');lb.classList.add('show');
-  lb.querySelector('.loading-progress').style.animation='none';
-  lb.querySelector('.loading-progress').offsetHeight;
-  lb.querySelector('.loading-progress').style.animation='loadAnim 8s ease forwards';
-  document.getElementById('doc-output').classList.remove('show');
-
-  var styleInstructions={
-    friendly:`Rewrite in a warm, clear, conversational tone — like a knowledgeable and caring friend who wants you to genuinely understand. Use "you" and "your" naturally. No jargon. No legal-speak. Short paragraphs. Make the reader feel informed and at ease.`,
-    witty:`Rewrite with warmth and a light wit. Be clear above all, but let occasional gentle humor make the content enjoyable. Like a brilliant friend who happens to be funny. The reader should finish with a smile and complete understanding.`,
-    sarcastic:`Rewrite with dry, intelligent sarcasm. Call out the absurdities of the original language honestly. Be funny, be real — but make sure every important meaning is preserved. The reader should understand perfectly, while sharing your exasperation at the unnecessarily complex original.`,
-    eli5:`Explain as simply as possible. Pretend the reader has never encountered this type of document before. Use short sentences, everyday words, real-world comparisons. If there's a concept, give an analogy. If there's a number, say what it actually means in practice.`
-  };
-
-  var prompt=`You are an expert document simplifier, linguist, and plain-language specialist. Your mission is to make complex documents genuinely understandable while preserving every important detail and legal/financial nuance.
-
-ORIGINAL DOCUMENT:
-"""
-${text.substring(0,4000)}
-"""
-
-WRITING STYLE: ${styleInstructions[style]}
-
-INSTRUCTIONS:
-1. SIMPLIFIED VERSION: Rewrite the entire document. Preserve ALL important facts, dates, numbers, obligations, rights, and conditions — never omit anything material. Just say it like a human would. Use paragraphs and line breaks naturally.
-2. GRAMMAR CORRECTIONS: Find genuine errors (typos, wrong punctuation, misused words, run-ons, subject-verb disagreement). Only flag real errors, not stylistic choices or legal conventions. Be precise — quote the exact problematic phrase.
-3. KEY POINTS: Extract the 5-7 most important things the reader MUST know. What would a lawyer or advisor tell their client to pay attention to? Write these in plain language with appropriate urgency.
-
-RESPOND ONLY in this exact JSON (no markdown, no backticks, no preamble):
-{
-  "simplified": "Full human-readable rewrite. Use \\n\\n for paragraph breaks. Warm, clear, complete.",
-  "corrections": [
-    {"before": "exact phrase with the error", "after": "corrected version", "reason": "clear explanation of the error type"},
-    {"before": "another error phrase", "after": "fix", "reason": "explanation"}
-  ],
-  "keyPoints": "The 5-7 most important things you must understand from this document, written in plain language. Number each point. Use \\n\\n between points."
-}
-
-Find 4-8 genuine corrections if they exist. If the document has no real errors, return an empty corrections array. Never make up errors that aren't there.`;
-
-  try{
-    var res=await fetch('/api/chat',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:3500,messages:[{role:'user',content:prompt}]})
-    });
-    var data=await res.json();
-    if(!data.content){
-      var apiErr=(data.error&&data.error.message)?data.error.message:JSON.stringify(data);
-      throw new Error('API error: '+apiErr);
-    }
-    var raw=data.content.map(function(i){return i.text||''}).join('');
-    var clean=raw.replace(/```json[\s\S]*?```|```[\s\S]*?```/g,'').trim();
-    var jsonMatch=clean.match(/\{[\s\S]*\}/);
-    if(jsonMatch)clean=jsonMatch[0];
-    var p=JSON.parse(clean);
-
-    document.getElementById('doc-simplified').innerHTML=p.simplified.replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
-
-    var cc=document.getElementById('doc-corrections');
-    if(p.corrections&&p.corrections.length>0){
-      cc.innerHTML=p.corrections.map(function(c){
-        return'<div class="correction-item"><div><div class="c-before">✗ '+c.before+'</div><div class="c-after">✓ '+c.after+'</div><div class="c-why">'+c.reason+'</div></div></div>';
-      }).join('');
-    }else{
-      cc.innerHTML='<p style="font-family:\'Cormorant Garamond\',serif;font-size:0.9rem;color:var(--ink3);padding:0.5rem;font-style:italic">No significant grammar issues found — your document was already well-written.</p>';
-    }
-
-    document.getElementById('doc-summary').innerHTML=p.keyPoints.replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
-    document.getElementById('doc-output').classList.add('show');
-    switchDocTab('simplified');
-    incrementUsage('doc');
-    setTimeout(function(){document.getElementById('doc-output').scrollIntoView({behavior:'smooth',block:'start'})},200);
-  }catch(err){
-    console.error(err);
-    document.getElementById('doc-simplified').innerHTML='<div style="padding:0.5rem"><p style="color:#8B1A1A;font-family:Georgia,serif;font-size:0.9rem;margin-bottom:0.8rem">⚠ Error: '+err.message+'</p><p style="font-family:Georgia,serif;font-size:0.82rem;color:#5A3E1C;line-height:1.7">Check Vercel environment variables and redeploy.</p></div>';
-    document.getElementById('doc-output').classList.add('show');
-  }
-  lb.classList.remove('show');
-  btn.disabled=false;btn.textContent='✨ Decode This Document →';
-}
-
-function switchDocTab(tab){
-  ['simplified','corrections','summary'].forEach(function(t,i){
-    document.getElementById('dp-'+t).classList.toggle('active',t===tab);
-    document.querySelectorAll('.doc-tab')[i].classList.toggle('active',t===tab);
-  });
-}
-
-/* ═══════════════════════════════
-   INTERVIEW MODAL
-═══════════════════════════════ */
-function openInterviewModal(){
-  var modal=document.getElementById('interview-modal');
-  modal.classList.add('show');
-  var c=document.getElementById('interview-questions');
-  if(!interviewData.questions||!interviewData.questions.length){
-    c.innerHTML='<p style="font-family:\'Cormorant Garamond\',serif;font-size:0.9rem;color:var(--ink3);font-style:italic;text-align:center;padding:1.5rem">Build your resume first to get role-specific interview questions tailored to your background.</p>';
-    return;
-  }
-  c.innerHTML='<p style="font-family:\'IM Fell English\',serif;font-size:0.65rem;color:var(--gold);font-style:italic;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem">Role: '+interviewData.job+'</p>'+
-  interviewData.questions.map(function(q,i){
-    return'<div class="q-box" onclick="toggleHint('+i+')"><div class="q-label">Question '+(i+1)+' · Click to reveal coaching</div><div class="q-text">'+q.q+'</div><div class="q-hint" id="qh-'+i+'">💡 '+q.hint+'</div></div>';
-  }).join('');
-}
-function toggleHint(i){document.getElementById('qh-'+i).classList.toggle('show')}
-function closeModal(){document.getElementById('interview-modal').classList.remove('show')}
-document.getElementById('interview-modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
-</script>
-</body>
-</html>
+    if(!selectedJob){docume
