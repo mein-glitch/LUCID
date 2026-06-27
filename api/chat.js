@@ -10,14 +10,17 @@ export default async function handler(req, res) {
     const messages = req.body.messages || [];
     const maxTokens = req.body.max_tokens || 4000;
 
-    // Try models in order — if one fails, try the next
+    // 6 fallback models — tries each in order until one works
     const models = [
+      'meta-llama/llama-3.3-70b-instruct:free',
       'meta-llama/llama-3.1-8b-instruct:free',
+      'google/gemma-2-9b-it:free',
       'mistralai/mistral-7b-instruct:free',
+      'qwen/qwen-2-7b-instruct:free',
       'openrouter/auto'
     ];
 
-    let lastError = 'All models failed';
+    let lastError = 'All models are currently unavailable. Please try again in a moment.';
 
     for (const model of models) {
       try {
@@ -32,24 +35,24 @@ export default async function handler(req, res) {
           body: JSON.stringify({ model, messages, max_tokens: maxTokens })
         });
 
-        // Safe parse — check if response is actually JSON
+        // Safe parse — never crash on HTML error pages
         const rawText = await openRouterRes.text();
         let data;
         try {
           data = JSON.parse(rawText);
         } catch {
-          lastError = `Model ${model} returned non-JSON response`;
-          continue; // try next model
+          lastError = `Model unavailable, trying next...`;
+          continue;
         }
 
-        if (!openRouterRes.ok || !data?.choices?.[0]?.message?.content) {
-          lastError = data?.error?.message || `Model ${model} failed`;
-          continue; // try next model
+        const content = data?.choices?.[0]?.message?.content;
+        if (!openRouterRes.ok || !content) {
+          lastError = data?.error?.message || 'Model failed, trying next...';
+          continue;
         }
 
-        const text = data.choices[0].message.content;
         return res.status(200).json({
-          content: [{ type: 'text', text }]
+          content: [{ type: 'text', text: content }]
         });
 
       } catch (modelErr) {
@@ -58,7 +61,6 @@ export default async function handler(req, res) {
       }
     }
 
-    // All models failed
     return res.status(503).json({ error: { message: lastError } });
 
   } catch (err) {
